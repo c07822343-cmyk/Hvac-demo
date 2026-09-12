@@ -70,7 +70,7 @@
   pointer-events: none;
   z-index: 2;
 }
-.plate figcaption { margin-top: 0.6rem; }
+.plate figcaption { position: absolute; left: 0; bottom: -1.7rem; margin: 0; }
 
 .plate-right {
   width: min(100%, 34rem);
@@ -334,6 +334,7 @@
   background-repeat: no-repeat;
 }
 .field textarea { resize: vertical; min-height: 6.5rem; }
+.field select option { background: var(--ink-2); color: var(--paper); }
 .field input::placeholder, .field textarea::placeholder { color: rgba(185, 179, 167, 0.55); }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;

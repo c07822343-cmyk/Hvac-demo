@@ -6,12 +6,14 @@
 <title>AERIS HVAC — Residential Air Conditioning, Boca Raton FL</title>
 <meta name="description" content="AERIS HVAC is a fictional residential HVAC company concept for Boca Raton, Florida. AC repair, installation, maintenance, indoor air quality and smart climate control — presented as a cinematic editorial web experience.">
 <meta name="theme-color" content="#10161b">
+<meta name="color-scheme" content="dark">
 <meta property="og:title" content="AERIS HVAC — Comfort Designed for Florida">
 <meta property="og:description" content="Residential air conditioning and HVAC service in Boca Raton. A fictional company presented as a cinematic editorial web experience.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
 <link rel="preload" as="image" href="assets/img/arrival.webp" fetchpriority="high">
+<link rel="modulepreload" href="assets/vendor/three.module.min.js">
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
@@ -20,7 +22,12 @@
 <link rel="stylesheet" href="assets/css/sections.css">
 <link rel="stylesheet" href="assets/css/motion.css">
 </head>
-<body class="is-booting">
+<body>
+
+<script>/* progressive enhancement flag — everything hidden-by-default
+   below is gated on .js so the page is complete without scripts */
+document.documentElement.classList.add("js");
+document.body.classList.add("is-booting");</script>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -114,6 +121,7 @@
             <a class="btn btn-ghost" href="#services">View Services</a>
           </div>
         </div>
+        <p class="vertical-type hero-coords" aria-hidden="true">26.36°N 80.08°W</p>
         <div class="hero-meta">
           <p class="micro">Fictional company — design demonstration</p>
           <p class="micro scroll-cue" aria-hidden="true"><span class="cue-line"></span>Scroll</p>

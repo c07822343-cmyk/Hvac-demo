@@ -493,21 +493,20 @@ Object.assign(World.prototype, {
     this._hedge(-13.5, -6, 0.8, 8);
 
     // foreground fronds that brush the lens between chapters
-    const fg1 = new THREE.Mesh(this._frondGeo(), this._m(this.mat.frondDark));
-    fg1.position.set(4.6, 3.1, 16.5);
-    fg1.rotation.set(0.2, -2.4, -2.5);
-    fg1.scale.setScalar(2.6);
-    fg1.renderOrder = 20;
-    this.scene.add(fg1);
-    this.sway.push({ obj: fg1, phase: 1.3, amp: 0.02 });
-
-    const fg2 = new THREE.Mesh(this._frondGeo(), this._m(this.mat.frondDark));
-    fg2.position.set(-6.4, 2.6, 9.6);
-    fg2.rotation.set(0.1, 0.7, -2.9);
-    fg2.scale.setScalar(2.2);
-    fg2.renderOrder = 20;
-    this.scene.add(fg2);
-    this.sway.push({ obj: fg2, phase: 3.7, amp: 0.02 });
+    this.fgFronds = [];
+    const mkFg = (x, y, z, rot, s, near, far) => {
+      const m = this._m(this.mat.frondDark.clone());
+      const f = new THREE.Mesh(this._frondGeo(), m);
+      f.position.set(x, y, z);
+      f.rotation.set(...rot);
+      f.scale.setScalar(s);
+      f.renderOrder = 20;
+      this.scene.add(f);
+      this.sway.push({ obj: f, phase: x, amp: 0.02 });
+      this.fgFronds.push({ obj: f, mat: m, near, far });
+    };
+    mkFg(6.4, 3.4, 15.0, [0.2, -2.4, -2.5], 2.3, [6, 8], [12, 16]);
+    mkFg(-5.2, 2.4, 4.6, [0.1, 0.7, -2.9], 2.0, [3, 4.5], [9, 13]);
   },
 
   /* ---------- airborne particles ---------- */
@@ -647,6 +646,17 @@ Object.assign(World.prototype, {
     this.dustUni.opacity.value = 0.18 + env.airflow * 0.1 + (1 - env.interior) * 0.14;
 
     for (const g of this.ventGlow) g.material.opacity = env.airflow * 0.45;
+
+    // foreground fronds only occupy the frame while the camera passes them
+    if (env.camPos) {
+      for (const f of this.fgFronds) {
+        const d = env.camPos.distanceTo(f.obj.position);
+        const inNear = Math.min(1, Math.max(0, (d - f.near[0]) / (f.near[1] - f.near[0])));
+        const outFar = 1 - Math.min(1, Math.max(0, (d - f.far[0]) / (f.far[1] - f.far[0])));
+        f.mat.opacity = 0.92 * inNear * outFar;
+        f.obj.visible = f.mat.opacity > 0.02;
+      }
+    }
   },
 
   setWaterQuality(on) {

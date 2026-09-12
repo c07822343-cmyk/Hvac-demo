@@ -184,6 +184,7 @@ export class Engine {
       this.post.setStrength(env.bloom);
 
       this.world.applyEnvironment(env);
+      env.camPos = this.camera.position;
       this.world.update(dt, env, motion);
       this.refreshEnvironment(p);
 

@@ -31,7 +31,7 @@ export const SCENE = {
     { pos: [  5.5, 2.50, 24.0], look: [-1.0, 2.20, -1.0], fov: 40 }, // 01 arrival
     { pos: [ -2.6, 1.65,  8.6], look: [-0.6, 1.50, -2.5], fov: 45 }, // 02 comfort
     { pos: [ -7.6, 1.90,  7.4], look: [-6.4, 1.30, -2.0], fov: 42 }, // 03 services
-    { pos: [ -1.4, 1.55, -0.6], look: [ 3.6, 2.40, -4.6], fov: 50 }, // 04 system (inside)
+    { pos: [ -1.4, 1.55, -0.6], look: [ 3.6, 2.62, -4.6], fov: 53 }, // 04 system (inside)
     { pos: [ -8.6, 1.20, -1.2], look: [-10.4, 0.85, -2.6], fov: 34 }, // 05 craft (condenser)
     { pos: [-14.5, 1.50, 13.5], look: [ 1.5, 2.40, -1.5], fov: 48 }, // 06 local
     { pos: [  0.8, 1.90, 16.5], look: [ 0.0, 2.10, -2.0], fov: 42 }, // 07 afterlight

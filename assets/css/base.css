@@ -157,6 +157,14 @@ body.webgl-on .env-poster,
 body.webgl-off .env-poster { opacity: 0; transition: opacity 1.4s var(--ease-slow); pointer-events: none; }
 body.webgl-off .env-poster { display: none; }
 
+/* no scripts at all: per-chapter imagery replaces the boot poster */
+html:not(.js) .env-poster { display: none; }
+html:not(.js) .scene-bg { opacity: 1; }
+html:not(.js) .burger { display: none; }
+html:not(.js) .site-nav { display: block; }
+html:not(.js) .site-nav ul { gap: 1rem; }
+html:not(.js) .grain { display: none; }
+
 /* scrim so the fixed environment never fights the text */
 .env-fallback-scrim {
   position: absolute;
