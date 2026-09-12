@@ -1,0 +1,62 @@
+/* ============================================================
+   AERIS HVAC — design tokens
+   Edit colors, type and spacing here. Everything else inherits.
+   ============================================================ */
+
+:root {
+  /* ---- palette: South Florida, dusk to afternoon ---- */
+  --ink:        #0d1215;   /* near-black */
+  --ink-2:      #121a20;   /* deep blue-charcoal */
+  --ink-3:      #1a252c;   /* raised charcoal */
+  --paper:      #ece6da;   /* soft warm white */
+  --paper-dim:  #b9b3a7;   /* muted paper */
+  --sand:       #d6c6ac;   /* warm architectural beige */
+  --beige:      #b39c7d;   /* travertine */
+  --green:      #6d8b7c;   /* muted tropical green */
+  --blue:       #35586d;   /* cool blue */
+  --cyan:       #8fc4bb;   /* soft cyan — supply air */
+  --amber:      #d99a5b;   /* accent, used sparingly — return air / dusk */
+
+  --line:       rgba(236, 230, 218, 0.16);
+  --line-soft:  rgba(236, 230, 218, 0.09);
+  --scrim:      rgba(9, 13, 16, 0.62);
+
+  /* ---- type ---- */
+  --font-display: "Bodoni Moda", "Times New Roman", serif;
+  --font-ui: "Archivo Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* display scale — editorial, large */
+  --t-hero: clamp(3.1rem, 9.2vw, 9.5rem);
+  --t-h2:   clamp(2.2rem, 5.6vw, 5.4rem);
+  --t-h3:   clamp(1.15rem, 1.6vw, 1.5rem);
+  --t-lead: clamp(1.02rem, 1.35vw, 1.28rem);
+  --t-body: clamp(0.95rem, 1.05vw, 1.06rem);
+  --t-micro: 0.66rem;
+  --t-eyebrow: 0.72rem;
+
+  /* ---- space ---- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2.25rem;
+  --sp-7: 3.5rem;
+  --sp-8: 5.5rem;
+  --sp-9: 8.5rem;
+  --gutter: clamp(1.25rem, 5vw, 6.5rem);
+  --head-h: 4.5rem;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.21, 1);
+  --ease-slow: cubic-bezier(0.16, 0.84, 0.28, 1);
+  --dur: 0.9s;
+
+  /* ---- depth ---- */
+  --z-env: 0;
+  --z-grain: 40;
+  --z-content: 10;
+  --z-head: 60;
+  --z-menu: 70;
+}

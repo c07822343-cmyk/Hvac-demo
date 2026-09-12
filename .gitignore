@@ -1,0 +1,4 @@
+node_modules/
+.media-src/
+.DS_Store
+*.log

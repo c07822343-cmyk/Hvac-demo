@@ -1,0 +1,122 @@
+/* ============================================================
+   Sections — per-chapter composition + non-WebGL image layer
+   ============================================================ */
+
+/* oversized ghost chapter numerals (editorial layer) */
+.chapter::after {
+  position: absolute;
+  z-index: -1;
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 22vw, 20rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(236, 230, 218, 0.07);
+  pointer-events: none;
+  user-select: none;
+}
+#arrival::after    { content: "01"; right: calc(var(--gutter) * 0.6); bottom: 4vh; }
+#comfort::after   { content: "02"; right: calc(var(--gutter) * 0.6); top: 12vh; }
+#services::after  { content: "03"; right: calc(var(--gutter) * 0.6); top: 6vh; }
+#system::after    { content: "04"; left: calc(var(--gutter) * 0.6); bottom: 6vh; }
+#about::after     { content: "05"; right: calc(var(--gutter) * 0.6); top: 10vh; }
+#local::after     { content: "06"; left: calc(var(--gutter) * 0.6); top: 6vh; }
+#afterlight::after{ content: "07"; right: calc(var(--gutter) * 0.6); bottom: 8vh; }
+#contact::after   { content: "08"; right: calc(var(--gutter) * 0.6); top: 4vh; }
+
+/* readability scrims tuned per chapter (over the 3D environment) */
+.chapter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+#arrival::before {
+  background: linear-gradient(78deg, rgba(8, 12, 15, 0.78) 4%, rgba(8, 12, 15, 0.28) 42%, transparent 68%),
+              linear-gradient(to top, rgba(8, 12, 15, 0.6), transparent 34%);
+}
+#comfort::before {
+  background: linear-gradient(82deg, rgba(8, 12, 15, 0.8) 6%, rgba(8, 12, 15, 0.35) 48%, transparent 72%);
+}
+#services::before, #system::before, #contact::before {
+  background: linear-gradient(to bottom, rgba(8, 12, 15, 0.72), rgba(8, 12, 15, 0.5) 40%, rgba(8, 12, 15, 0.78));
+}
+#about::before {
+  background: linear-gradient(278deg, rgba(8, 12, 15, 0.82) 8%, rgba(8, 12, 15, 0.4) 50%, transparent 76%);
+}
+#local::before {
+  background: linear-gradient(84deg, rgba(8, 12, 15, 0.82) 8%, rgba(8, 12, 15, 0.4) 46%, transparent 74%);
+}
+#afterlight::before {
+  background: radial-gradient(90% 70% at 32% 52%, rgba(8, 12, 15, 0.72), transparent 70%);
+}
+
+/* ---- 01 arrival ---- */
+.ch-arrival .hero-title { margin: var(--sp-3) 0 var(--sp-2); }
+.ch-arrival .sticky-inner { align-items: flex-end; padding-bottom: calc(var(--sp-9) * 0.8); }
+
+/* ---- 02 comfort ---- */
+.ch-comfort .plate-right { box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.8); }
+
+/* ---- 03 services ---- */
+.ch-services .section-head { margin-bottom: 0; }
+
+/* ---- 05 craft ---- */
+.ch-craft .plate-left { box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.8); }
+
+/* ---- 07 afterlight ---- */
+.ch-afterlight .center-statement .display { font-size: var(--t-hero); }
+.ch-afterlight .body { max-width: 30em; }
+
+/* ---- 08 contact ---- */
+.ch-contact .section-pad { min-height: 100vh; display: flex; align-items: center; }
+
+/* ============================================================
+   Non-WebGL image layer — the site remains complete without 3D
+   ============================================================ */
+
+body.webgl-off .scene-bg {
+  animation: bg-drift 46s var(--ease-slow) infinite alternate;
+}
+@keyframes bg-drift {
+  from { background-position: 48% 50%; background-size: 108%; }
+  to   { background-position: 54% 46%; background-size: 118%; }
+}
+
+body.webgl-off .env { background: var(--ink-2); }
+
+/* when WebGL is off, the environment layer holds a slow vertical
+   light gradient so the page never reads as flat black */
+body.webgl-off .env::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #17212a 0%, #0d1215 45%, #10181d 100%);
+}
+
+/* ============================================================
+   Mobile composition (designed, not shrunk) — 390 × 844 target
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .chapter::after { font-size: clamp(5rem, 26vw, 9rem); opacity: 0.8; }
+  #arrival::after, #comfort::after, #services::after, #system::after,
+  #about::after, #local::after, #afterlight::after, #contact::after {
+    top: auto; bottom: 2vh; right: 4vw; left: auto;
+  }
+
+  .ch-arrival .sticky-inner { align-items: flex-end; padding-bottom: var(--sp-8); }
+  .hero-meta { position: static; margin-top: var(--sp-6); }
+  .fg-frond-left { width: 15rem; top: -3vh; opacity: 0.5; }
+
+  .plate-right { transform: none; aspect-ratio: 4 / 3; }
+  .plate-left { aspect-ratio: 4 / 3; }
+
+  .ch-contact .section-pad { min-height: 0; }
+
+  .section-pad { padding-top: clamp(4.5rem, 12vh, 7rem); padding-bottom: clamp(4.5rem, 12vh, 7rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.webgl-off .scene-bg { animation: none; }
+}

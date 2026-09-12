@@ -1,0 +1,33 @@
+{
+  "name": "aeris-hvac-demo",
+  "version": "1.0.0",
+  "description": "AERIS HVAC — fictional premium local HVAC company demo (Boca Raton, FL) as a cinematic editorial WebGL site with a complete non-WebGL fallback.",
+  "scripts": {
+    "start": "python3 -m http.server 8080 --bind 0.0.0.0",
+    "check": "node tools/check.mjs",
+    "test": "node tools/smoke.mjs",
+    "shaders": "node tools/shaders.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c07822343-cmyk/Hvac-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c07822343-cmyk/Hvac-demo/issues"
+  },
+  "homepage": "https://github.com/c07822343-cmyk/Hvac-demo#readme",
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/bodoni-moda": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "three": "^0.169.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@shaderfrog/glsl-parser": "^7.0.1",
+    "jsdom": "^30.0.1"
+  }
+}

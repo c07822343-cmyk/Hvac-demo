@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AERIS HVAC — Residential Air Conditioning, Boca Raton FL</title>
+<meta name="description" content="AERIS HVAC is a fictional residential HVAC company concept for Boca Raton, Florida. AC repair, installation, maintenance, indoor air quality and smart climate control — presented as a cinematic editorial web experience.">
+<meta name="theme-color" content="#10161b">
+<meta property="og:title" content="AERIS HVAC — Comfort Designed for Florida">
+<meta property="og:description" content="Residential air conditioning and HVAC service in Boca Raton. A fictional company presented as a cinematic editorial web experience.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+<link rel="preload" as="image" href="assets/img/arrival.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body class="is-booting">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ══ ENVIRONMENT LAYER · WebGL enhancement, never a dependency ══ -->
+<div class="env" aria-hidden="true">
+  <div class="env-poster" id="envPoster">
+    <img src="assets/img/arrival.webp" alt="" fetchpriority="high" decoding="async">
+  </div>
+  <canvas id="scene" tabindex="-1"></canvas>
+  <div class="env-fallback-scrim"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ══ HEADER ══ -->
+<header class="site-head" id="top">
+  <a class="brand" href="#top" aria-label="AERIS HVAC — home">
+    <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+      <path d="M8 40 L24 8 L40 40" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+      <path d="M14 30 C20 26 28 34 34 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>
+      <path d="M17.5 36 C22 33 26 39 30.5 36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".5"/>
+    </svg>
+    <span class="brand-word">AERIS<span class="brand-sub">HVAC</span></span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="head-right">
+    <a class="head-phone" href="tel:+15615550148"><span class="phone-note">DEMO</span>(561) 555-0148</a>
+    <a class="btn btn-solid btn-sm" href="#contact">Request Service</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="menu-foot">
+    <a class="btn btn-solid" href="#contact">Request Service</a>
+    <a class="menu-phone" href="tel:+15615550148">(561) 555-0148 <em>demo</em></a>
+  </div>
+</div>
+
+<!-- ══ CHAPTER RAIL · secondary, optional, never required ══ -->
+<nav class="chapters" id="chapters" aria-label="Chapters">
+  <ol>
+    <li><a href="#arrival"    data-ch="0"><i>01</i><span>Arrival</span></a></li>
+    <li><a href="#comfort"    data-ch="1"><i>02</i><span>Comfort</span></a></li>
+    <li><a href="#services"   data-ch="2"><i>03</i><span>Services</span></a></li>
+    <li><a href="#system"     data-ch="3"><i>04</i><span>System</span></a></li>
+    <li><a href="#about"      data-ch="4"><i>05</i><span>Craft</span></a></li>
+    <li><a href="#local"      data-ch="5"><i>06</i><span>Local</span></a></li>
+    <li><a href="#afterlight" data-ch="6"><i>07</i><span>Afterlight</span></a></li>
+    <li><a href="#contact"    data-ch="7"><i>08</i><span>Contact</span></a></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+  <!-- ═══ 01 ARRIVAL ═══ -->
+  <section class="chapter ch-arrival" id="arrival" data-chapter="0" aria-labelledby="h-arrival">
+    <div class="scene-bg" data-bg="assets/img/arrival.webp"></div>
+    <div class="sticky-wrap" style="--wrap:170vh">
+      <div class="sticky-inner hero">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="rule"></span>AERIS HVAC — BOCA RATON / FLORIDA</p>
+          <h1 id="h-arrival" class="display hero-title">
+            <span class="line"><span class="w">Comfort</span></span>
+            <span class="line"><span class="w">Designed</span></span>
+            <span class="line"><span class="w">for</span> <span class="w accent">Florida.</span></span>
+          </h1>
+          <p class="lead reveal">Residential air conditioning and HVAC service in Boca Raton. Repair, installation, maintenance and air quality — built around the house you actually live in.</p>
+          <div class="cta-row reveal">
+            <a class="btn btn-solid" href="#contact">Request Service</a>
+            <a class="btn btn-ghost" href="#services">View Services</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <p class="micro">Fictional company — design demonstration</p>
+          <p class="micro scroll-cue" aria-hidden="true"><span class="cue-line"></span>Scroll</p>
+        </div>
+        <img class="fg fg-frond-left" src="assets/svg/frond.svg" alt="" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 02 COMFORT ═══ -->
+  <section class="chapter ch-comfort" id="comfort" data-chapter="1" aria-labelledby="h-comfort">
+    <div class="scene-bg" data-bg="assets/img/comfort.webp"></div>
+    <div class="sticky-wrap" style="--wrap:200vh">
+      <div class="sticky-inner split">
+        <div class="col-copy">
+          <p class="eyebrow reveal"><i>02</i><span class="rule"></span>Comfort</p>
+          <h2 id="h-comfort" class="display">
+            <span class="line"><span class="w">The difference</span></span>
+            <span class="line"><span class="w">is what</span> <span class="w accent">you feel.</span></span>
+          </h2>
+          <p class="body reveal">Ninety-four degrees on the patio. Seventy-two at the kitchen counter. Between them, a system sized, installed and maintained so that gap feels ordinary.</p>
+          <dl class="conditions reveal">
+            <div><dt>Outside</dt><dd>94°F <em>/ 71% RH</em></dd></div>
+            <div><dt>Inside</dt><dd>72°F <em>/ 45% RH</em></dd></div>
+          </dl>
+          <p class="micro reveal">Typical July design condition — illustrative</p>
+        </div>
+        <figure class="plate plate-right reveal-img">
+          <img src="assets/img/comfort.webp" alt="Cool shaded living room behind floor-to-ceiling glass, sheer curtain lifted by supply air, sunlit pool beyond" loading="lazy" decoding="async">
+          <figcaption class="micro">Great room, south glass — 3:40 PM</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 03 SERVICES ═══ -->
+  <section class="chapter ch-services" id="services" data-chapter="2" aria-labelledby="h-services">
+    <div class="scene-bg" data-bg="assets/img/condenser.webp"></div>
+    <div class="section-pad">
+      <header class="section-head">
+        <p class="eyebrow reveal"><i>03</i><span class="rule"></span>Services</p>
+        <h2 id="h-services" class="display">
+          <span class="line"><span class="w">Everything between</span></span>
+          <span class="line"><span class="w">the heat and</span> <span class="w accent">your home.</span></span>
+        </h2>
+        <p class="body reveal">Six scopes of work. Plain descriptions. Nothing you don’t need.</p>
+      </header>
+
+      <ol class="svc-list">
+        <li class="svc reveal">
+          <span class="svc-i">01</span>
+          <h3>AC Repair</h3>
+          <p>Fast diagnosis and repair for cooling problems.</p>
+          <span class="svc-tag">Diagnosis first</span>
+        </li>
+        <li class="svc reveal">
+          <span class="svc-i">02</span>
+          <h3>AC Installation</h3>
+          <p>New systems designed for residential comfort.</p>
+          <span class="svc-tag">Load-calculated</span>
+        </li>
+        <li class="svc svc-plate reveal">
+          <span class="svc-i">03</span>
+          <h3>HVAC Maintenance</h3>
+          <p>Preventative care designed to keep systems running reliably.</p>
+          <span class="svc-tag">Seasonal</span>
+          <figure class="plate plate-inline reveal-img">
+            <img src="assets/img/condenser.webp" alt="Condenser unit on a gravel pad beside a stucco wall, palm shadow falling across it" loading="lazy" decoding="async">
+            <figcaption class="micro">Condenser, west side yard</figcaption>
+          </figure>
+        </li>
+        <li class="svc reveal">
+          <span class="svc-i">04</span>
+          <h3>Indoor Air Quality</h3>
+          <p>Solutions for cleaner, more comfortable indoor air.</p>
+          <span class="svc-tag">Filtration · Humidity</span>
+        </li>
+        <li class="svc reveal">
+          <span class="svc-i">05</span>
+          <h3>Smart Climate Control</h3>
+          <p>Thermostat and comfort-management solutions.</p>
+          <span class="svc-tag">Controls</span>
+        </li>
+        <li class="svc reveal">
+          <span class="svc-i">06</span>
+          <h3>Emergency Service</h3>
+          <p>Help when cooling problems cannot wait.</p>
+          <span class="svc-tag">After hours</span>
+        </li>
+      </ol>
+
+      <div class="cta-row svc-cta reveal">
+        <a class="btn btn-solid" href="#contact">Request Service</a>
+        <a class="btn btn-ghost" href="tel:+15615550148">(561) 555-0148</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 04 THE SYSTEM ═══ -->
+  <section class="chapter ch-system" id="system" data-chapter="3" aria-labelledby="h-system">
+    <div class="scene-bg" data-bg="assets/img/ductwork.webp"></div>
+    <img class="fg fg-grille" src="assets/svg/grille.svg" alt="" aria-hidden="true">
+    <div class="section-pad">
+      <header class="section-head section-head-right">
+        <p class="eyebrow reveal"><i>04</i><span class="rule"></span>The System</p>
+        <h2 id="h-system" class="display">
+          <span class="line"><span class="w">How a house</span></span>
+          <span class="line"><span class="w accent">stays cool.</span></span>
+        </h2>
+        <p class="body reveal">One loop, four movements.</p>
+      </header>
+
+      <ol class="flow">
+        <li class="flow-step reveal">
+          <span class="flow-i">01</span>
+          <h3>Heat enters</h3>
+          <p>Sun, humidity and infiltration load the envelope from morning to dusk.</p>
+        </li>
+        <li class="flow-step reveal">
+          <span class="flow-i">02</span>
+          <h3>The system conditions</h3>
+          <p>Return air is drawn across a cold coil; the heat is carried outside and released at the condenser.</p>
+        </li>
+        <li class="flow-step flow-plate reveal">
+          <span class="flow-i">03</span>
+          <h3>Cool air moves</h3>
+          <p>Supply ducts deliver cooled, dehumidified air to every room, quietly.</p>
+          <figure class="plate plate-inline reveal-img">
+            <img src="assets/img/ductwork.webp" alt="Insulated supply ducts curving from an air handler in a dim mechanical space" loading="lazy" decoding="async">
+            <figcaption class="micro">Supply plenum + insulated runs</figcaption>
+          </figure>
+        </li>
+        <li class="flow-step reveal">
+          <span class="flow-i">04</span>
+          <h3>Comfort is restored</h3>
+          <p>The thermostat holds the setpoint. The house settles. The system fades out.</p>
+        </li>
+      </ol>
+      <p class="micro flow-note reveal">Simplified diagram — every home is different. We explain yours before we touch it.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 05 CRAFT ═══ -->
+  <section class="chapter ch-craft" id="about" data-chapter="4" aria-labelledby="h-craft">
+    <div class="scene-bg" data-bg="assets/img/craft.webp"></div>
+    <div class="sticky-wrap" style="--wrap:190vh">
+      <div class="sticky-inner split split-flip">
+        <figure class="plate plate-left reveal-img">
+          <img src="assets/img/craft.webp" alt="Minimal round thermostat on a warm plaster wall in raking afternoon light" loading="lazy" decoding="async">
+          <figcaption class="micro">Setpoint, hallway wall</figcaption>
+        </figure>
+        <div class="col-copy">
+          <p class="eyebrow reveal"><i>05</i><span class="rule"></span>Craft</p>
+          <h2 id="h-craft" class="display">
+            <span class="line"><span class="w">Good work</span></span>
+            <span class="line"><span class="w">should feel</span> <span class="w accent">simple.</span></span>
+          </h2>
+          <dl class="principles">
+            <div class="reveal"><dt>Diagnose</dt><dd>Measure the system before recommending work. Symptoms are not diagnoses.</dd></div>
+            <div class="reveal"><dt>Explain</dt><dd>Plain language, written down. Scope and price approved before work begins.</dd></div>
+            <div class="reveal"><dt>Install to spec</dt><dd>Equipment, charge and airflow verified against specification — not habit.</dd></div>
+            <div class="reveal"><dt>Maintain early</dt><dd>Most failures announce themselves months ahead. Maintenance listens.</dd></div>
+            <div class="reveal"><dt>Verify</dt><dd>Temperature split, static pressure and humidity checked after every job.</dd></div>
+            <div class="reveal"><dt>Respect the house</dt><dd>Covers down, registers clean, driveway clear. We leave nothing but the fix.</dd></div>
+          </dl>
+          <p class="micro reveal">No awards wall. No review scores. The work is the argument.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 06 LOCAL ═══ -->
+  <section class="chapter ch-local" id="local" data-chapter="5" aria-labelledby="h-local">
+    <div class="scene-bg" data-bg="assets/img/local.webp"></div>
+    <img class="fg fg-palmetto" src="assets/svg/palmetto.svg" alt="" aria-hidden="true">
+    <div class="section-pad">
+      <div class="local-grid">
+        <div class="local-copy">
+          <p class="eyebrow reveal"><i>06</i><span class="rule"></span>Local</p>
+          <h2 id="h-local" class="display">
+            <span class="line"><span class="w">This climate is</span></span>
+            <span class="line"><span class="w accent">the specification.</span></span>
+          </h2>
+          <p class="body reveal">Heat that arrives in May and stays through October. Humidity that never fully leaves. Attics past 130°F, salt air on every coil. Equipment in South Florida works harder than almost anywhere else — so sizing, installation and maintenance matter more here.</p>
+          <p class="micro reveal">Service area — Boca Raton · Highland Beach · Delray Beach · Pompano Beach</p>
+        </div>
+        <figure class="plate plate-local reveal-img">
+          <img src="assets/img/local.webp" alt="Travertine garden wall with the sharp shadow of palm fronds across it, saw palmetto and agave below" loading="lazy" decoding="async">
+          <figcaption class="micro">Garden wall, frond shadow — 5:15 PM</figcaption>
+        </figure>
+        <p class="vertical-type" aria-hidden="true">South Florida</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 07 AFTERLIGHT ═══ -->
+  <section class="chapter ch-afterlight" id="afterlight" data-chapter="6" aria-labelledby="h-after">
+    <div class="scene-bg" data-bg="assets/img/afterlight.webp"></div>
+    <div class="sticky-wrap" style="--wrap:170vh">
+      <div class="sticky-inner center-statement">
+        <p class="eyebrow reveal"><i>07</i><span class="rule"></span>Afterlight</p>
+        <h2 id="h-after" class="display">
+          <span class="line"><span class="w">Come home</span></span>
+          <span class="line"><span class="w accent">to comfort.</span></span>
+        </h2>
+        <p class="body reveal">The best compliment a system can earn is silence. No noise at the register. No hot room at four in the afternoon. Nothing to think about at all.</p>
+        <p class="micro reveal">When good HVAC works, you stop noticing it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 08 CONTACT ═══ -->
+  <section class="chapter ch-contact" id="contact" data-chapter="7" aria-labelledby="h-contact">
+    <div class="scene-bg" data-bg="assets/img/contact.webp"></div>
+    <div class="section-pad">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow reveal"><i>08</i><span class="rule"></span>Contact</p>
+          <h2 id="h-contact" class="display">
+            <span class="line"><span class="w">Request</span></span>
+            <span class="line"><span class="w accent">service.</span></span>
+          </h2>
+          <p class="body reveal">Tell us what the house is doing. We’ll take it from there.</p>
+
+          <dl class="contact-info reveal">
+            <div><dt>Phone</dt><dd><a href="tel:+15615550148">(561) 555-0148</a> <em>demo</em></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:hello@aeris-hvac-demo.com">hello@aeris-hvac-demo.com</a> <em>demo</em></dd></div>
+            <div><dt>Hours</dt><dd>Mon–Sat 07:00–18:00 · emergencies 24/7</dd></div>
+            <div><dt>Area</dt><dd>Boca Raton + neighboring coastal communities</dd></div>
+          </dl>
+        </div>
+
+        <form class="contact-form reveal" id="serviceForm" novalidate>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-service">Service needed</label>
+            <select id="f-service" name="service" required>
+              <option value="" selected>Select a service…</option>
+              <option>AC Repair</option>
+              <option>AC Installation</option>
+              <option>HVAC Maintenance</option>
+              <option>Indoor Air Quality</option>
+              <option>Smart Climate Control</option>
+              <option>Emergency Service</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="4" placeholder="What is the house doing? Noise, warm rooms, humidity, a system that won’t start…"></textarea>
+          </div>
+          <button class="btn btn-solid btn-wide" type="submit">Request Service</button>
+          <p class="form-status micro" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="micro form-demo">Demonstration — AERIS HVAC is a fictional company. This form stores nothing and sends nothing.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+        <path d="M8 40 L24 8 L40 40" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        <path d="M14 30 C20 26 28 34 34 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>
+        <path d="M17.5 36 C22 33 26 39 30.5 36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".5"/>
+      </svg>
+      <p class="foot-word">AERIS <span>HVAC</span></p>
+      <p class="micro">Boca Raton / Florida</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="foot-demo">
+      <p class="micro">AERIS HVAC is a fictional company created for this design demonstration. Names, contact details, hours and imagery do not represent a real business.</p>
+      <p class="micro">Built with HTML · CSS · Three.js — no tracking, no analytics, no external APIs.</p>
+    </div>
+  </div>
+  <div class="foot-base">
+    <p class="micro">© 2026 AERIS HVAC (fictional) — comfort designed for Florida</p>
+    <p class="micro">26.36°N 80.08°W</p>
+  </div>
+</footer>
+
+<!-- three.js is vendored locally so the site never depends on a CDN -->
+<script type="importmap">
+{ "imports": { "three": "./assets/vendor/three.module.min.js" } }
+</script>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

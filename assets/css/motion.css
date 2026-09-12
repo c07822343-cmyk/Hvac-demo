@@ -1,0 +1,60 @@
+/* ============================================================
+   Motion — reveals, word masks, image wipes.
+   Everything is opt-in via .is-in, added by IntersectionObserver.
+   Reduced motion: content simply appears.
+   ============================================================ */
+
+/* word-by-word headline reveal */
+.display .w {
+  transform: translateY(112%);
+  transition: transform 1.05s var(--ease-slow);
+  transition-delay: var(--d, 0s);
+  will-change: transform;
+}
+.display.is-in .w { transform: translateY(0); }
+
+/* fade + rise */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.95s var(--ease), transform 0.95s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* image wipe */
+.reveal-img { overflow: hidden; }
+.reveal-img img {
+  clip-path: inset(0 0 100% 0);
+  transform: scale(1.07);
+  transition: clip-path 1.25s var(--ease-slow), transform 1.6s var(--ease-slow);
+  transition-delay: var(--d, 0s);
+}
+.reveal-img.is-in img { clip-path: inset(0 0 0 0); transform: scale(1); }
+.reveal-img figcaption {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease) 0.5s;
+}
+.reveal-img.is-in figcaption { opacity: 1; }
+
+/* chapter rail + header settle on boot */
+body.is-booting .site-head,
+body.is-booting .chapters { opacity: 0; transform: translateY(-8px); }
+.site-head, .chapters { transition: opacity 1s var(--ease) 0.3s, transform 1s var(--ease) 0.3s, background 0.5s var(--ease), border-color 0.5s var(--ease); }
+body:not(.is-booting) .site-head, body:not(.is-booting) .chapters { opacity: 1; transform: none; }
+
+/* boot veil over the poster so first paint is calm */
+body.is-booting .env-poster img { transform: scale(1.1); filter: brightness(0.6); }
+.env-poster img { transition: transform 2.4s var(--ease-slow), filter 1.8s var(--ease); }
+body:not(.is-booting) .env-poster img { transform: scale(1.04); filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .display .w, .reveal, .reveal-img img, .reveal-img figcaption {
+    transition: none;
+    transform: none;
+    opacity: 1;
+    clip-path: none;
+  }
+  .cue-line { animation: none; }
+  .site-head, .chapters { transition: none; opacity: 1; transform: none; }
+}
