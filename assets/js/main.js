@@ -166,6 +166,8 @@ function initScrollUI() {
         else a.removeAttribute("aria-current");
       });
     }
+    // mobile action bar: appear after the hero, step aside at the form
+    document.body.classList.toggle("show-cta", y > window.innerHeight * 0.7 && state.chapter < 7);
     if (state.rig) state.rig.setScroll(y);
   };
 

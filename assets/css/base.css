@@ -163,7 +163,11 @@ html:not(.js) .scene-bg { opacity: 1; }
 html:not(.js) .burger { display: none; }
 html:not(.js) .site-nav { display: block; }
 html:not(.js) .site-nav ul { gap: 1rem; }
+html:not(.js) .site-nav a { padding: 0.75rem 0; }
 html:not(.js) .grain { display: none; }
+
+/* the renderer is gone in fallback mode — don't keep a dead canvas */
+body.webgl-off #scene { display: none; }
 
 /* scrim so the fixed environment never fights the text */
 .env-fallback-scrim {

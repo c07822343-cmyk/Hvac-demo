@@ -7,7 +7,8 @@
     "check": "node tools/check.mjs",
     "test": "node tools/smoke.mjs",
     "shaders": "node tools/shaders.mjs",
-    "framing": "node tools/framing.mjs"
+    "framing": "node tools/framing.mjs",
+    "css": "node tools/css.mjs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "type": "module",
   "devDependencies": {
     "@shaderfrog/glsl-parser": "^7.0.1",
+    "css-tree": "^3.2.1",
     "jsdom": "^30.0.1"
   }
 }

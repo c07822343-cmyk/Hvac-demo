@@ -32,6 +32,8 @@ server rather than double-clicking the file.)
 npm test        # jsdom smoke test: fallback, reveals, menu, form, camera maths
 npm run check   # every referenced asset, anchor and import resolves
 npm run shaders # GLSL parse + vertex/fragment varying cross-check
+npm run css     # css-tree parse of every stylesheet + design-token resolution
+npm run framing # projects each chapter subject through its camera key
 ```
 
 ## Architecture
@@ -40,6 +42,7 @@ Plain **HTML + CSS + JavaScript + Three.js** (vendored, no CDN, no build).
 
 ```
 index.html                  all copy + the eight chapters
+404.html                    on-brand static-host error page
 assets/
   css/
     fonts.css               self-hosted @font-face (OFL fonts)

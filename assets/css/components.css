@@ -335,7 +335,7 @@
 }
 .field textarea { resize: vertical; min-height: 6.5rem; }
 .field select option { background: var(--ink-2); color: var(--paper); }
-.field input::placeholder, .field textarea::placeholder { color: rgba(185, 179, 167, 0.55); }
+.field input::placeholder, .field textarea::placeholder { color: rgba(185, 179, 167, 0.68); }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
   border-color: var(--cyan);

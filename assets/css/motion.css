@@ -56,5 +56,6 @@ body:not(.is-booting) .env-poster img { transform: scale(1.04); filter: none; }
     clip-path: none;
   }
   .cue-line { animation: none; }
+  .mobile-cta { transition: none; }
   .site-head, .chapters { transition: none; opacity: 1; transform: none; }
 }

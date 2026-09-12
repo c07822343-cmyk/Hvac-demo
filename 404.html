@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — AERIS HVAC (fictional demo)</title>
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: linear-gradient(to bottom, #17212a, #0d1215 60%, #10181d);
+    color: #ece6da; font-family: var(--font-ui); text-align: center;
+    padding: 2rem 1.25rem;
+  }
+  main { display: grid; gap: 1.25rem; justify-items: center; }
+  p.k { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: #8fc4bb; }
+  h1 {
+    margin: 0; font-family: var(--font-display); font-weight: 500; text-transform: uppercase;
+    font-size: clamp(2.6rem, 9vw, 6rem); line-height: .95;
+  }
+  h1 em { font-style: italic; text-transform: none; }
+  p.b { color: #b9b3a7; max-width: 32em; line-height: 1.6; }
+  a.btn {
+    display: inline-block; margin-top: .5rem; padding: 1.05rem 2.1rem; background: #ece6da; color: #0d1215;
+    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+  }
+  a.btn:hover { background: #8fc4bb; }
+  :focus-visible { outline: 2px solid #8fc4bb; outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="k">404 — register not found</p>
+  <h1>This room<br><em>isn’t conditioned.</em></h1>
+  <p class="b">The page you asked for doesn’t exist. AERIS HVAC is a fictional company created for a design demonstration — but the way home is real.</p>
+  <a class="btn" href="/">Back to comfort</a>
+</main>
+</body>
+</html>
