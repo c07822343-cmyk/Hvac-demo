@@ -83,6 +83,9 @@
 
 body.webgl-off .scene-bg {
   animation: bg-drift 46s var(--ease-slow) infinite alternate;
+  /* in fallback the backdrop is an ambient echo of the framed plate —
+     keep it dim so the two never read as a duplicated photo */
+  filter: brightness(0.72) contrast(0.96) saturate(0.85);
 }
 @keyframes bg-drift {
   from { background-position: 48% 50%; background-size: 108%; }
